@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <script src="calculator.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      button {
+        color: burlywood;
+        font-size: 70px;
+      }
+      
+      input {
+        width: 165px;
+        height: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="display" disabled /><br />
+      <button onclick="updateDisplay(1)">1</button>
+      <button onclick="updateDisplay(2)">2</button>
+      <button onclick="updateDisplay(3)">3</button>
+      <br />
+      <button onclick="updateDisplay(4)">4</button>
+      <button onclick="updateDisplay(5)">5</button>
+      <button onclick="updateDisplay(6)">6</button>
+      <br />
+      <button onclick="updateDisplay(7)">7</button>
+      <button onclick="updateDisplay(8)">8</button>
+      <button onclick="updateDisplay(9)">9</button>
+      <br />
+      <button onclick="updateDisplay(0)">0</button>
+      <button onclick="updateDisplay('+')">+</button>
+      <button onclick="updateDisplay('-')">-</button>
+      <br />
+      <button onclick="updateDisplay('*')">*</button>
+      <button onclick="updateDisplay('/')">/</button>
+      <button onclick="calculate()">=</button>
+      <br />
+      <br />
+    </div>
+
+    <script>
+      let display = document.getElementById("display");
+
+      function updateDisplay(val) {
+        display.value += val;
+      }
+
+      function calculate() {
+        display.value = eval(display.value);
+      }
+    </script>
+  </body>
+</html>
